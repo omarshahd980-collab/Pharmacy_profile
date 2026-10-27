@@ -1,0 +1,13 @@
+PharmaSys focused source-audit patch — 2026-10-26
+
+Confirmed issue fixed:
+- The sidebar linked to #/inventory, and app.js had an InventoryPage renderer, but PAGE_META omitted the inventory route. getRoute() therefore redirected #/inventory to dashboard, making the inventory page appear unresponsive.
+- Added the inventory route metadata.
+- Added exact route-name permission aliases for smart-inventory, cash-register, stock-transfers, action-center, and product so route guards use the same names as app.js routes.
+
+Validation performed:
+- All frontend JavaScript files passed `node --check` before and after the patch.
+- Sidebar route audit: all data-route links now exist in PAGE_META.
+
+Important limitation:
+- This is a source-level fix, not a claim that every workflow has passed live browser/API testing. Inventory adjustments, sales completion, purchases, returns, authentication, and backend synchronization still need runtime testing against the user's local database and account role. Keep a backup of the current folder before replacing it, and do not delete the existing pharmacy.db or browser LocalStorage data.

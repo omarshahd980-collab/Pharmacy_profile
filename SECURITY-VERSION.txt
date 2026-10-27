@@ -1,0 +1,1 @@
+PharmaSys Security v8 - authentication fields mapped only to users; startup schema compatibility retained.

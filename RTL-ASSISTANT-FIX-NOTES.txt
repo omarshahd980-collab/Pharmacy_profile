@@ -1,0 +1,8 @@
+PharmaSys RTL / Pharmacy Assistant fix
+
+- The pharmacy assistant is routed as #/medical-assistant and is present in the right sidebar.
+- The floating assistant overlays are hidden so the assistant is opened as a normal page.
+- The final RTL stylesheet is loaded last with a new cache-busting version.
+- Keep your original project and database as backup. Extract this archive into a NEW folder.
+- Start the backend/frontend using the project's existing instructions, then open the same served frontend folder's index.html URL and press Ctrl+F5.
+- Do not copy only the CSS into a different project folder; use the frontend folder from this archive.

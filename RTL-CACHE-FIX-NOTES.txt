@@ -1,0 +1,8 @@
+PharmaSys RTL/light layout verification patch — 2026-10-21
+
+Changes:
+1. Bumped true-light-rtl-fix.css cache version in frontend/index.html to 20261021-2.
+2. Added final CSS guards to neutralize old fixed content padding that could offset page content.
+3. Moved the floating global assistant to the left so it does not overlap the right-side RTL sidebar.
+
+The original archive was preserved separately. Test this copy before replacing your working folder.

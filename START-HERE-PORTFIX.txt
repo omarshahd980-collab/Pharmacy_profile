@@ -1,0 +1,9 @@
+PharmaSys PORT 8000 STARTUP FIX
+
+1) Extract this ZIP into a NEW folder (do not merge into an older copy).
+2) Open the extracted PharmaSys-Client-Ready folder.
+3) Right-click RUN_PHARMASYS.ps1 and choose Run with PowerShell.
+4) Use the browser window it opens; do not open an old bookmark.
+
+This build uses cache-busting ID PORTFIX-20261021-3 and opens the dashboard URL with that ID.
+The launcher cleans up a stale PharmaSys uvicorn server on port 8000 before starting this folder's backend.

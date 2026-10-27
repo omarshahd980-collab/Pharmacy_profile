@@ -1,0 +1,5 @@
+PharmaSys Login Sidebar Fix V2 - 2026-10-21
+
+This build hides the app sidebar whenever #authRoot is active, even if the body login-active class is not set by a particular login path. The launcher build marker and URL cache-buster are updated to LOGIN-SIDEBAR-FIX-20261021-5.
+
+Important: extract this ZIP into a NEW folder, then run RUN_PHARMASYS.bat from this folder. Confirm the launcher window prints LOGIN-SIDEBAR-FIX-20261021-5 and that the browser address contains v=20261021-login-sidebar-fix5.

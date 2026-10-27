@@ -1,0 +1,17 @@
+PharmaSys final review build: FINAL-SIDEBAR-RIGHT-20261025-3
+
+Changes in this build:
+- Added a final inline CSS override after all linked stylesheets to anchor #sidebar to the physical right on desktop and align the main content.
+- Updated cache-busting versions for the final CSS files and build marker.
+- Preserved existing backend, frontend logic, and database files.
+
+Validation performed locally:
+- Python source syntax checks.
+- JavaScript syntax checks where Node.js is available.
+- Local asset references in frontend/index.html.
+- SQLite integrity check if the database file is included.
+
+Limitations:
+- This package has not been launched in the user's Windows/browser environment in this session.
+- Login, sales, permissions, OCR against real images, and the visual sidebar position must still be confirmed by running the app.
+- Keep a backup of any real pharmacy database before replacing files.

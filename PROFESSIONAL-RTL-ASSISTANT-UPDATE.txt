@@ -1,0 +1,12 @@
+PharmaSys professional RTL update — 2026-10-21
+
+Changes:
+- Kept the sidebar on the right in RTL desktop layout, with responsive mobile drawer behavior.
+- Styled the navigation and dashboard using a clean white / pale blue / teal clinical SaaS palette.
+- Replaced the assistant sidebar emoji with a consistent inline SVG icon.
+- Removed the always-visible floating pharmacy assistant panel from the main shell.
+- Kept the pharmacy assistant as a normal routed page at #/medical-assistant, rendered by ChatbotPage and bound when that route is opened.
+- Added a responsive, professional layout for the assistant conversation page.
+- Original project copy was not modified; this is a separate patched archive.
+
+Run using the existing RUN_PHARMASYS.bat / startup instructions. After starting, open the app and click “مساعد الصيدلية” in the right sidebar. Hard-refresh (Ctrl+F5) if browser CSS is cached.
