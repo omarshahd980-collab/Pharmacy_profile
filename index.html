@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- PharmaSys build marker: FINAL-SIDEBAR-RIGHT-20261025-3 -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PharmaSys | نظام إدارة الصيدلية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/refinements.css" />
+  <link rel="stylesheet" href="css/print.css" />
+  <link rel="stylesheet" href="css/enterprise.css" />
+  <link rel="stylesheet" href="css/dashboard-reference-rtl.css?v=20261025-sidebar-right-final3" />
+  <link rel="stylesheet" href="css/true-light-rtl-fix.css?v=20261025-sidebar-right-final3" />
+  <style id="pharmasys-final-sidebar-right-override">
+    /* Final override: force the actual application sidebar to the physical right edge. */
+    @media (min-width: 901px) {
+      html[dir="rtl"] body #app > aside#sidebar.sidebar,
+      html[dir="rtl"] body .app > aside#sidebar.sidebar,
+      body #app aside#sidebar.sidebar {
+        position: fixed !important;
+        top: 0 !important; bottom: 0 !important;
+        right: 0 !important; left: auto !important;
+        inset: 0 0 0 auto !important;
+        inset-inline-start: auto !important; inset-inline-end: 0 !important;
+        width: 260px !important; height: 100vh !important;
+        margin: 0 !important; transform: none !important;
+        z-index: 1100 !important;
+      }
+      html[dir="rtl"] body #app > div.main,
+      body #app div.main {
+        margin-left: 0 !important; margin-right: 260px !important;
+        margin-inline-start: 0 !important; margin-inline-end: 260px !important;
+        width: calc(100% - 260px) !important;
+      }
+    }
+    @media (max-width: 900px) {
+      html[dir="rtl"] body #app > aside#sidebar.sidebar,
+      body #app aside#sidebar.sidebar {
+        right: 0 !important; left: auto !important;
+        inset: 0 0 0 auto !important;
+        transform: translateX(110%) !important;
+        width: min(290px, 86vw) !important;
+      }
+      body #app aside#sidebar.sidebar.open { transform: translateX(0) !important; }
+      body #app div.main { margin: 0 !important; width: 100% !important; }
+    }
+    body.login-active #app aside#sidebar.sidebar { display: none !important; }
+  </style>
+</head>
+<body>
+  <div class="app" id="app">
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 1 1 7-7l7 7a4.95 4.95 0 1 1-7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+          </span>
+          <span class="logo-text">PharmaSys</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-section">
+          <span class="nav-section-label">Overview</span>
+        <a href="#/dashboard" class="nav-link" data-route="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+          <span>لوحة التحكم</span>
+        </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-section-label">Operations</span>
+        <a href="#/sales" class="nav-link" data-perm="sales.view" data-route="sales">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span>المبيعات</span>
+        </a>
+        <a href="#/products" class="nav-link" data-perm="products.view" data-route="products">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/><path d="m8.5 8.5 7 7"/></svg>
+          <span>المنتجات</span>
+        </a>
+        <a href="#/inventory" class="nav-link" data-perm="inventory.view" data-route="inventory">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 7 9-4 9 4-9 4-9-4Z"/><path d="M3 7v10l9 4 9-4V7"/><path d="M12 11v10"/></svg>
+          <span>المخزون</span>
+        </a>
+        <a href="#/purchases" class="nav-link" data-perm="purchases.view" data-route="purchases">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span>المشتريات</span>
+        </a>
+        <a href="#/customers" class="nav-link" data-perm="customers.view" data-route="customers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>العملاء</span>
+        </a>
+        <a href="#/suppliers" class="nav-link" data-perm="suppliers.view" data-route="suppliers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h-5"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35a1 1 0 0 0-.78-.38H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+          <span>الموردون</span>
+        </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-section-label">Analytics</span>
+          <a href="#/action-center" class="nav-link" data-route="action-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span>مركز الإجراءات</span>
+          </a>
+        <a href="#/medical-assistant" class="nav-link" data-perm="chatbot.view" data-route="medical-assistant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v1a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 20v-1a7 7 0 0 1 14 0v1"/><path d="M4 10h3M17 10h3M12 13v3"/></svg>
+          <span>مساعد الصيدلية</span>
+        </a>
+          <a href="#/smart-inventory" class="nav-link" data-perm="smartInventory.view" data-route="smart-inventory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><circle cx="12" cy="10" r="3"/><circle cx="12" cy="16" r="3"/></svg>
+            <span>Smart Inventory</span>
+          </a>
+        <a href="#/stock-transfers" class="nav-link" data-perm="stockTransfers.view" data-route="stock-transfers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10H7z"/><path d="M4 10h3M17 14h3"/><path d="m5 8 2-2 2 2M19 16l-2 2-2-2"/></svg>
+          <span>تحويل المخزون</span>
+        </a>
+        <a href="#/reports" class="nav-link" data-perm="reports.view" data-route="reports">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M7 16v-5"/><path d="M12 16V8"/><path d="M17 16v-3"/></svg>
+          <span>التقارير</span>
+        </a>
+        <a href="#/activity" class="nav-link" data-perm="activity.view" data-route="activity">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>سجل النشاط</span>
+        </a>
+        </div>
+        <div class="nav-section">
+          <span class="nav-section-label">System</span>
+          <a href="#/cash-register" class="nav-link" data-perm="cashRegister.view" data-route="cash-register">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/></svg>
+            <span>الصندوق</span>
+          </a>
+          <a href="#/delivery" class="nav-link" data-perm="delivery.view" data-feature="delivery" data-route="delivery">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h-5"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35a1 1 0 0 0-.78-.38H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+            <span>التوصيل</span>
+          </a>
+        <a href="#/notifications" class="nav-link" data-perm="notifications.view" data-route="notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span>الإشعارات</span>
+        </a>
+        <a href="#/returns" class="nav-link" data-perm="returns.view" data-route="returns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 6 6v3"/></svg>
+          <span>مردود المبيعات</span>
+        </a>
+        <a href="#/enterprise" class="nav-link" data-perm="enterprise.view" data-route="enterprise"><span class="nav-icon">⚙️</span><span>الإدارة المتقدمة</span></a>
+        <a href="#/settings" class="nav-link" data-perm="settings.view" data-route="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v3"/><path d="M12 20v3"/><path d="m4.2 4.2 2.1 2.1"/><path d="m17.7 17.7 2.1 2.1"/><path d="M1 12h3"/><path d="M20 12h3"/><path d="m4.2 19.8 2.1-2.1"/><path d="m17.7 6.3 2.1-2.1"/></svg>
+          <span>الإعدادات</span>
+        </a>
+        </div>
+
+        <a href="#/expenses" class="nav-link" data-perm="expenses.view" data-route="expenses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+          <span>المصروفات</span>
+        </a>
+        <a href="#/users" class="nav-link" data-perm="users.view" data-route="users">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span>المستخدمين</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-card">
+          <div class="user-avatar" data-user-avatar>م</div>
+          <div class="user-info">
+            <span class="user-name" data-user-name>مستخدم</span>
+            <span class="user-role" data-user-role>-</span>
+          </div>
+          <button class="logout-btn" title="تسجيل الخروج" aria-label="تسجيل الخروج">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="icon-btn sidebar-toggle" id="sidebarToggle" aria-label="فتح القائمة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+        </button>
+        <h1 class="page-title" id="pageTitle">لوحة التحكم</h1>
+        <div class="backend-status" id="backendStatus" title="حالة الاتصال بالخادم"><span class="backend-dot"></span><span class="backend-status-text">جارٍ الاتصال...</span></div>
+
+        <div class="topbar-actions">
+          <button class="search-field search-trigger" data-gsearch-open type="button" aria-label="بحث شامل في النظام">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <span class="search-trigger-label">ابحث في النظام...</span>
+            <kbd class="gsearch-kbd">Ctrl K</kbd>
+          </button>
+          <div class="notif-dropdown" id="notifDropdownWrap">
+            <button class="icon-btn" id="notificationsBtn" aria-label="الإشعارات" aria-haspopup="true" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+              <span class="notif-dot"></span>
+              <span class="notif-badge" id="notifBadge" hidden></span>
+            </button>
+            <div class="notif-panel" id="notifPanel" role="menu"></div>
+          </div>
+          <div class="topbar-user profile-dropdown" id="profileDropdownWrap">
+            <button class="user-avatar small profile-dropdown-btn" id="profileDropdownBtn" data-user-avatar type="button" aria-haspopup="true" aria-label="الملف الشخصي">م</button>
+            <div class="profile-dropdown-menu" id="profileDropdownMenu">
+              <div class="dropdown-user-info">
+                <strong data-user-name>مستخدم</strong>
+                <span class="badge info" data-user-role>-</span>
+              </div>
+              <button class="dropdown-item" id="profileMenuItem" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                الملف الشخصي
+              </button>
+              <button class="dropdown-item danger" id="logoutMenuItem" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+                تسجيل الخروج
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Page Content -->
+      <main class="content" id="pageContent"></main>
+    </div>
+  </div>
+
+
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="auth-root" id="authRoot"></div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/utils/utils.js"></script>
+  <script src="js/config/seedData.js"></script>
+  <script src="js/config/settingsStorage.js"></script>
+  <script src="js/core/productStatus.js"></script>
+  <script src="js/storage/productsStorage.js"></script>
+  <script src="js/storage/inventoryStorage.js"></script>
+  <script src="js/components/modal.js"></script>
+  <script src="js/pages/products.js"></script>
+  <script src="js/pages/inventory.js"></script>
+  <script src="js/pages/stockTransfers.js"></script>
+  <script src="js/storage/salesStorage.js"></script>
+  <script src="js/pages/sales.js"></script>
+  <script src="js/storage/suppliersStorage.js"></script>
+  <script src="js/storage/purchasesStorage.js"></script>
+  <script src="js/pages/suppliers.js"></script>
+  <script src="js/pages/purchases.js"></script>
+  <script src="js/storage/customersStorage.js"></script>
+  <script src="js/pages/customers.js"></script>
+  <script src="js/services/analytics.js"></script>
+  <script src="js/pages/reports.js"></script>
+  <script src="js/storage/expensesStorage.js"></script>
+  <script src="js/storage/returnsStorage.js"></script>
+  <script src="js/storage/shiftStorage.js"></script>
+  <script src="js/storage/deliveryStorage.js"></script>
+  <script src="js/storage/heldSalesStorage.js"></script>
+  <script src="js/pages/expenses.js"></script>
+  <script src="js/storage/notificationsStorage.js"></script>
+  <script src="js/storage/activityStorage.js"></script>
+  <script src="js/core/permissions.js"></script>
+  <script src="js/storage/authStorage.js?v=20261007-loginfix2"></script>
+  <script src="js/config/runtime.js"></script>
+  <script src="js/services/backendApi.js?v=20261022-login-screen-pro-fix6"></script>
+  <script src="js/components/auth.js?v=20261022-login-screen-pro-fix6"></script>
+  <script src="js/pages/settings.js"></script>
+  <script src="js/components/onboarding.js"></script>
+  <script src="js/components/notifications.js"></script>
+  <script src="js/pages/activity.js"></script>
+  <script src="js/pages/returns.js"></script>
+  <script src="js/pages/smartInventory.js"></script>
+  <script src="js/pages/actionCenter.js"></script>
+  <script src="js/pages/cashRegister.js"></script>
+  <script src="js/pages/delivery.js"></script>
+  <script src="js/services/saleService.js"></script>
+  <script src="js/services/cashRegisterService.js"></script>
+  <script src="js/services/smartInventory.js"></script>
+  <script src="js/services/returns.js"></script>
+  <script src="js/services/search.js"></script>
+  <script src="js/pages/productDetails.js"></script>
+  <script src="js/pages/users.js"></script>
+  <script src="js/components/assistant.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/core/router.js"></script>
+  <script src="js/services/backendBridge.js"></script>
+  <script src="js/pages/enterprise.js"></script>
+  <script src="js/services/whatsappInvoice.js"></script>
+  <script src="js/core/accessibilityPerformance.js"></script>
+  <script src="js/pages/chatbot.js"></script>
+  <script src="js/app.js?v=20261022-login-screen-pro-fix6"></script>
+<script>
+(function(){
+  const root=document.getElementById('globalAssistant'); if(!root) return;
+  const input=document.getElementById('gaInput'), form=document.getElementById('gaForm'), quick=document.getElementById('gaQuick');
+  function addReply(text){
+    let box=root.querySelector('.ga-reply');
+    if(!box){ box=document.createElement('div'); box.className='ga-welcome ga-reply'; root.insertBefore(box,quick); }
+    box.innerHTML='<div class="ga-bubble"><strong>المساعد الصيدلي</strong><br>'+String(text||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])).replace(/\n/g,'<br>')+'</div>';
+  }
+  async function ask(q){
+    q=String(q||'').trim(); if(!q) return;
+    addReply('جاري البحث...');
+    try{
+      if(!window.BackendAPI || !BackendAPI.token()) throw new Error('الخادم غير متصل.');
+      const data=await BackendAPI.chatbot(q); addReply(data.reply||'لم تصل إجابة.');
+    }catch(e){ addReply('تعذر الاتصال بالمساعد الآن. تأكدي من تشغيل الخادم ثم حاولي مرة أخرى.'); }
+  }
+  root.querySelectorAll('[data-ga-q]').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.gaQ)));
+  form.addEventListener('submit',e=>{e.preventDefault();const q=input.value;input.value='';ask(q);});
+  document.getElementById('gaClose')?.addEventListener('click',()=>root.style.display='none');
+})();
+</script>
+</body>
+</html>
